@@ -81,7 +81,9 @@ export default function CartScreen() {
                       </Button>
                     </Col>
                     <Col md={2}>${item.price}</Col>
-                    <Col md={2}>{item.weight * item.quantity}g</Col>
+                    <Col md={2}>
+                      {item.weight * item.quantity}/{item.weight}g
+                    </Col>
                     <Col md={1}>
                       <Button
                         variant="light"
