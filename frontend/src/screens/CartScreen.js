@@ -33,6 +33,7 @@ export default function CartScreen() {
   const checkOutHandler = () => {
     navigate('/signin?redirect=/shipping');
   };
+  const totalWeight = cartItems.reduce((a, c) => a + c.weight * c.quantity, 0);
   return (
     <div>
       <Helmet>
@@ -101,53 +102,49 @@ export default function CartScreen() {
         <Col md={4}>
           <Card>
             <Card.Body>
+              <Card.Title>Information</Card.Title>
               <ListGroup variant="flush">
-                <Col>
-                  <ListGroup.Item>
-                    <h4>
-                      Subtotal<br></br>
-                      {cartItems.reduce((a, c) => a + c.quantity, 0)} items:
-                      <br></br>$
-                      {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
-                    </h4>
-                  </ListGroup.Item>
-                </Col>
-                <Col>
-                  <ListGroup.Item>
-                    <h5>
-                      Weight:<br></br>
-                      {cartItems.reduce((a, c) => a + c.weight * c.quantity, 0)}
-                      g <br></br>
-                      {Math.ceil(
-                        cartItems.reduce(
-                          (a, c) => a + c.weight * c.quantity,
-                          0
-                        ) / 1500
-                      )}{' '}
-                      Packages of 1.5 Kg<br></br>
-                      Free:{' '}
-                      {Math.ceil(
-                        cartItems.reduce(
-                          (a, c) => a + c.weight * c.quantity,
-                          0
-                        ) / 1500
-                      ) *
-                        1500 -
-                        cartItems.reduce(
-                          (a, c) => a + c.weight * c.quantity,
-                          0
-                        )}
-                      g
-                    </h5>
-                  </ListGroup.Item>
-                </Col>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Subtotal:</Col>
+                    <Col>
+                      ${cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Items:</Col>
+                    <Col>{cartItems.reduce((a, c) => a + c.quantity, 0)} </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Weight:</Col>
+                    <Col>{totalWeight}g </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Packages of 1.5 Kg</Col>
+                    <Col>{Math.ceil(totalWeight / 1500)} </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Free:</Col>
+                    <Col>
+                      {Math.ceil(totalWeight / 1500) * 1500 - totalWeight}g
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
                 <ListGroup.Item>
                   <div className="d-grid">
                     <Button
                       type="button"
                       variant="primary"
                       onClick={checkOutHandler}
-                      disable={cartItems.length === 0}
+                      disabled={cartItems.length === 0}
                     >
                       Proceed to Checkout
                     </Button>
