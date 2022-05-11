@@ -5,9 +5,9 @@ import Button from 'react-bootstrap/esm/Button';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 import { useContext, useState, useEffect } from 'react';
-import { Store } from '../Store';
+import { Store } from '../Store.js';
 import { toast } from 'react-toastify';
-import { getError } from '../utils';
+import { getError } from '../utils.js';
 
 export default function SigninScreen() {
   const navigate = useNavigate();

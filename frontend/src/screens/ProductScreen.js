@@ -6,13 +6,13 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
-import Rating from './components/Rating';
+import Rating from '../components/Rating.js';
 import Button from 'react-bootstrap/esm/Button';
 import { Helmet } from 'react-helmet-async';
-import LoadingBox from './components/LoadingBox';
-import MessageBox from './components/MessageBox';
+import LoadingBox from '../components/LoadingBox.js';
+import MessageBox from '../components/MessageBox.js';
 import { getError } from '../utils';
-import { Store } from '../Store';
+import { Store } from '../Store.js';
 
 const reducer = (state, action) => {
   switch (action.type) {

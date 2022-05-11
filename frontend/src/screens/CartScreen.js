@@ -1,11 +1,11 @@
 import { useContext } from 'react';
-import { Store } from '../Store';
+import { Store } from '../Store.js';
 import { Helmet } from 'react-helmet-async';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import MessageBox from './components/MessageBox';
+import MessageBox from '../components/MessageBox.js';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/esm/Button';
 import axios from 'axios';

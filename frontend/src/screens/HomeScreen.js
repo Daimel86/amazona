@@ -3,10 +3,10 @@ import axios from 'axios';
 import lagger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Product from './components/Product';
+import Product from '../components/Product.js';
 import { Helmet } from 'react-helmet-async';
-import LoadingBox from './components/LoadingBox';
-import MessageBox from './components/MessageBox';
+import LoadingBox from '../components/LoadingBox.js';
+import MessageBox from '../components/MessageBox.js';
 //import Product from '../components/Product';
 
 //import data from '../data';

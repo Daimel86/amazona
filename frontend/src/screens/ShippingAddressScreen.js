@@ -3,8 +3,8 @@ import Form from 'react-bootstrap/Form';
 import React, { useContext, useEffect, useState } from 'react';
 import Button from 'react-bootstrap/esm/Button';
 import { useNavigate } from 'react-router-dom';
-import { Store } from '../Store';
-import CheckOutSteps from './components/CheckOutSteps';
+import { Store } from '../Store.js';
+import CheckOutSteps from '../components/CheckOutSteps.js';
 
 export default function ShippingAddressScreen() {
   const navigate = useNavigate();

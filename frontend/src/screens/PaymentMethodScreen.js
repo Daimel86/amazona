@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import CheckOutSteps from './components/CheckOutSteps';
+import CheckOutSteps from '../components/CheckOutSteps.js';
 import { Helmet } from 'react-helmet-async';
 import Button from 'react-bootstrap/esm/Button';
-import { Store } from '../Store';
+import { Store } from '../Store.js';
 import { useNavigate } from 'react-router-dom';
 
 export default function PaymentMethodScreen() {
