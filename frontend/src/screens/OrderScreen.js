@@ -91,14 +91,14 @@ export default function OrderScreen() {
             <Card.Body>
               <Card.Title>Payment</Card.Title>
               <Card.Text>
-                {order.isPaid ? (
-                  <MessageBox variant="success">
-                    Paid at{order.paidAt}
-                  </MessageBox>
-                ) : (
-                  <MessageBox variant="danger">Not Paid</MessageBox>
-                )}
+                <strong>Method:</strong>
+                {order.paymentMethod}
               </Card.Text>
+              {order.isPaid ? (
+                <MessageBox variant="success">Paid at{order.paidAt}</MessageBox>
+              ) : (
+                <MessageBox variant="danger">Not Paid</MessageBox>
+              )}
             </Card.Body>
           </Card>
           <Card className="mb-3">
@@ -128,7 +128,7 @@ export default function OrderScreen() {
           </Card>
         </Col>
         <Col md={4}>
-          <Card>
+          <Card className="mb-3">
             <Card.Body>
               <Card.Title>Order Sumary</Card.Title>
               <ListGroup variant="flush">
