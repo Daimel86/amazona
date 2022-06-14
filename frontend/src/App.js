@@ -28,6 +28,7 @@ import SearchScreen from './screens/SearchScreen';
 import ProtectedRoute from './components/ProtectedRoute';
 import DashboardScreen from './screens/DashboardScreen';
 import AdminRoute from './components/AdminRoute';
+import UserSreen from './screens/UserSreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -194,6 +195,14 @@ function App() {
                 element={
                   <AdminRoute>
                     <DashboardScreen />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/UserList"
+                element={
+                  <AdminRoute>
+                    <UserSreen />
                   </AdminRoute>
                 }
               />

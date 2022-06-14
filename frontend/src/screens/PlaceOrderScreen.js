@@ -72,7 +72,6 @@ export default function PlaceOrderScreen() {
       toast.error(getError(err));
     }
   };
-
   useEffect(() => {
     if (!cart.paymentMethod) {
       navigate('/payment');
